@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Little Caliphs Sri Sulong — Tadika Iman Khalif</title>
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="assets/favicon-48.png">
+<link rel="shortcut icon" href="assets/favicon-48.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png"><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  @media (min-width:861px){
+    .about-grid{grid-template-columns:1.2fr 0.9fr;}
+  }
+  .about-visual .frame{max-width:520px;margin:0 auto;}
+  .hero-visual{min-height:460px;}
+  .hero-visual img.mascot{max-width:520px;}
+  .float-chip.c2{top:auto;bottom:-56px;left:50%;right:auto;transform:translateX(-50%);}
+  .gal-item:nth-child(6){transform:rotate(1.2deg);}
+  .programs{background:var(--cream);}
+  .prog-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;}
+  .prog-item{
+    background:var(--white);border-radius:18px;padding:22px 14px;text-align:center;
+    box-shadow:var(--shadow);display:flex;flex-direction:column;align-items:center;gap:10px;
+    font-family:'Fredoka';font-weight:600;color:var(--green-deep);font-size:0.9rem;
+    transition:transform .25s;border:2px solid transparent;
+  }
+  .prog-item:hover{transform:translateY(-4px);border-color:var(--yellow);}
+  .prog-ic{font-size:1.8rem;}
+  .prog-item.prog-more{background:var(--yellow-soft);border:2px dashed var(--yellow);}
+  @media (max-width:860px){
+    .prog-grid{grid-template-columns:repeat(2,1fr);}
+  }
+  .social-links{display:flex;gap:10px;margin-top:10px;flex-wrap:wrap;}
+  .social-btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:10px 16px;border-radius:999px;color:var(--cream);
+    font-family:'Fredoka';font-weight:600;font-size:0.88rem;
+    box-shadow:0 8px 18px -8px rgba(0,0,0,0.35);
+    transition:transform .22s ease, box-shadow .22s ease, filter .22s ease;
+  }
+  .social-btn svg{width:18px;height:18px;flex-shrink:0;}
+  .social-btn:hover{transform:translateY(-3px) scale(1.03);filter:brightness(1.08);box-shadow:0 12px 22px -8px rgba(0,0,0,0.45);}
+  .nav-cta-wa{background:linear-gradient(135deg,#25D366,#128C7E)!important;box-shadow:0 8px 18px -8px rgba(37,211,102,0.6)!important;display:inline-flex;align-items:center;}
+  .sb-fb{background:linear-gradient(135deg,#1877F2,#0d5fd1);}
+  .sb-ig{background:linear-gradient(135deg,#f9ce34,#ee2a7b 55%,#6228d7);}
+  .sb-tt{background:linear-gradient(135deg,#010101,#25F4EE 0%,#010101 45%,#FE2C55 100%);}
+  .pillar-top .icon{width:100%;height:100%;border-radius:0;overflow:hidden;margin:0;box-shadow:none;}
+  .pillar-top .icon img{width:100%;height:100%;object-fit:cover;display:block;}
+  .pillar-card.p1 .icon img{object-position:center 100%;}
+  .social-btn span{color:var(--cream);}
+  .pillar-top{padding:0;height:280px;}
+  .pillar-card{min-height:280px;}
+
+  /* ---- Mobile menu (functional) ---- */
+  .nav{position:relative;flex-wrap:wrap;}
+  .nav-toggle{order:3;}
+  @media (max-width:860px){
+    .nav-cta{order:2;padding:9px 16px;font-size:0.82rem;}
+    .nav-links{
+      display:none;width:100%;order:4;
+      flex-direction:column;gap:0;background:var(--cream);
+      border-radius:16px;box-shadow:var(--shadow);margin-top:12px;overflow:hidden;
+    }
+    .nav-links.open{display:flex;}
+    .nav-links a{padding:14px 18px;border-bottom:1px solid rgba(35,48,36,0.08);}
+    .nav-links a:last-child{border-bottom:none;}
+  }
+
+  /* ---- General mobile refinements ---- */
+  @media (max-width:600px){
+    section{padding:44px 0;}
+    .hero{padding:28px 0 20px;}
+    .hero h1{font-size:1.7rem;}
+    .hero p.lead{font-size:0.98rem;}
+    .hero-ctas .btn{padding:12px 20px;font-size:0.88rem;}
+    .hero-visual{min-height:280px;}
+    .hero-blob{width:240px;height:240px;}
+    .hero-visual img.mascot{max-width:230px;}
+    .float-chip.c2{top:8px;bottom:auto;left:auto;right:-6px;transform:none;}
+    .rating-chip{padding:8px 12px;}
+    .about-visual .frame{max-width:100%;padding:10px;}
+    .about-visual .frame img{height:auto;}
+    .pillar-top{height:170px;}
+    .pillar-card{min-height:170px;}
+    .prog-grid{grid-template-columns:repeat(2,1fr);gap:10px;}
+    .prog-item{padding:16px 8px;font-size:0.78rem;}
+    .prog-ic{font-size:1.5rem;}
+    .gal-grid{gap:16px;}
+    .gal-item img{height:180px;}
+    .social-links{justify-content:center;}
+    .social-btn{padding:9px 13px;font-size:0.8rem;}
+    .testi-summary{padding:24px 20px;}
+    .testi-score .big{font-size:2.4rem;}
+    .loc-card{padding:22px;}
+    .map-visual{min-height:220px;}
+  }
+  @media (max-width:420px){
+    .brand{font-size:0.92rem;gap:6px;}
+    .brand-badge{width:34px;height:34px;padding:4px;}
+    .nav-cta-wa{font-size:0.7rem;padding:7px 11px;}
+    .nav-cta-wa svg{width:13px;height:13px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="brand">
+      <span class="brand-badge"><img src="assets/butterfly-logo.png" alt="Logo Little Caliphs"></span>
+      Little<b> Caliphs Sri Sulong</b>
+    </div>
+    <nav class="nav-links" id="navLinks">
+      <a href="#tentang">Tentang</a>
+      <a href="#program">Program</a>
+      <a href="#galeri">Galeri</a>
+      <a href="#lokasi">Lokasi</a>
+    </nav>
+    <a class="nav-cta nav-cta-wa" href="https://wa.me/60197404220?text=Assalamualaikum.%20Saya%20berminat%20untuk%20mengetahui%20maklumat%20mengenai%20pendaftaran%20di%20Tadika%20Little%20Caliphs%20Sri%20Sulong." target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px;vertical-align:-3px;margin-right:4px;"><path d="M17.47 14.38c-.29-.15-1.7-.84-1.96-.93-.26-.1-.46-.15-.65.14-.2.3-.75.94-.92 1.13-.17.2-.34.22-.63.08-.29-.15-1.22-.45-2.33-1.44-.86-.77-1.44-1.71-1.61-2-.17-.3-.02-.46.13-.6.13-.13.29-.34.44-.51.15-.17.2-.29.29-.49.1-.2.05-.37-.02-.51-.08-.15-.65-1.57-.9-2.15-.24-.57-.48-.49-.65-.5h-.56c-.2 0-.51.07-.78.37s-1.03 1-1.03 2.45 1.06 2.85 1.2 3.05c.15.2 2.09 3.2 5.08 4.48.71.31 1.26.49 1.69.63.71.22 1.35.19 1.86.12.57-.09 1.7-.7 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.34Z"/><path d="M12.02 2C6.5 2 2.02 6.48 2.02 12c0 1.9.52 3.68 1.44 5.2L2 22l4.94-1.42A9.94 9.94 0 0 0 12.02 22c5.52 0 10-4.48 10-10S17.54 2 12.02 2Zm0 18.2a8.16 8.16 0 0 1-4.17-1.14l-.3-.18-3.02.87.86-2.94-.2-.31A8.18 8.18 0 1 1 12.02 20.2Z"/></svg>WhatsApp Kami</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Buka menu" aria-expanded="false" onclick="var n=document.getElementById('navLinks');var open=n.classList.toggle('open');this.setAttribute('aria-expanded',open);this.textContent=open?'✕':'☰';">☰</button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="confetti">
+    <div class="dot" style="width:18px;height:18px;background:var(--red);top:14%;left:8%;"></div>
+    <div class="dot" style="width:12px;height:12px;background:var(--blue);top:70%;left:5%;"></div>
+    <div class="dot" style="width:22px;height:22px;background:var(--green);top:20%;left:92%;"></div>
+    <div class="dot" style="width:14px;height:14px;background:var(--yellow);top:80%;left:88%;"></div>
+    <div class="dot" style="width:10px;height:10px;background:var(--red);top:50%;left:96%;"></div>
+  </div>
+  <div class="wrap hero-grid">
+    <div data-reveal>
+      <span class="eyebrow">🎈 Tadika Islam · Parit Sulong, Johor</span>
+      <h1>Jom bina anak yang <span class="r">bijak</span> & <span class="g">berakhlak</span> bersama Little Caliphs Sri Sulong!</h1>
+      <p class="lead">Pendidikan awal yang menggabungkan pembelajaran Islam, Bahasa Inggeris dan kreativiti untuk membentuk anak yang cemerlang.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="tel:0197404220">☎️ Hubungi Kami</a>
+        <a class="btn btn-ghost" href="#program">Lihat Program</a>
+      </div>
+    </div>
+    <div class="hero-visual" data-reveal>
+      <div class="hero-blob"></div>
+      <img class="mascot" src="assets/mascot-boy.png" alt="Watak Little Caliphs, budak lelaki dan perempuan">
+      <div class="rating-chip"><div class="n">5.0 ★</div><div class="s">★★★★★</div></div>
+      <div class="float-chip c2">🦋 Belajar Sambil Bermain</div>
+    </div>
+  </div>
+</section>
+
+<div class="wave" style="background:var(--cream);">
+  <svg viewBox="0 0 1200 60" preserveAspectRatio="none"><path d="M0,30 C150,60 350,0 600,30 C850,60 1050,0 1200,30 L1200,60 L0,60 Z" fill="#FFF3D6"/></svg>
+</div>
+
+<section class="pillars">
+  <div class="wrap">
+    <div class="pillars-tag" data-reveal>
+      <h2>Manfaat Di Dunia Dan Akhirat</h2>
+      <span>:: Benefits In This World And The Hereafter ::</span>
+    </div>
+    <div class="pillar-grid">
+      <div class="pillar-card p1" data-reveal>
+        <div class="pillar-top"><div class="icon"><img src="assets/pillar-islam.jpg" alt="Kelas Al-Quran Little Caliphs"></div></div>
+        <div class="pillar-band">Akhlak & Al-Quran</div>
+        <p>Bacaan Al-Quran, hafazan doa harian dan pembentukan adab mulia sejak kecil.</p>
+      </div>
+      <div class="pillar-card p2" data-reveal>
+        <div class="pillar-top"><div class="icon"><img src="assets/pillar-english.jpg" alt="Kelas akademik dan Bahasa Inggeris"></div></div>
+        <div class="pillar-band">Bahasa & Akademik</div>
+        <p>Pendedahan Bahasa Inggeris dan akademik seawal mungkin melalui lagu, cerita dan aktiviti harian.</p>
+      </div>
+      <div class="pillar-card p3" data-reveal>
+        <div class="pillar-top"><div class="icon"><img src="assets/pillar-creative.jpg" alt="Aktiviti kreatif pelajar Little Caliphs"></div></div>
+         <div class="pillar-band">Seni & Kemahiran</div>
+        <p>Lukisan, muzik dan aktiviti tangan untuk asah imaginasi dan kemahiran minda anak-anak.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="tentang">
+  <div class="wrap about-grid">
+    <div class="about-visual" data-reveal>
+      <div class="frame"><img src="assets/mascot-pair.jpg" alt="Pelajar Little Caliphs beraktiviti bersama guru"></div>
+      <div class="sticker">Bijak & Ceria! ✨</div>
+    </div>
+    <div class="about-copy" data-reveal>
+      <span class="eyebrow">Kenapa Little Caliphs ?</span>
+      <h2 style="margin-top:14px;">Tempat anak kecil membesar dengan gembira</h2>
+      <p style="color:#4B584F;font-weight:600;margin-top:12px;">Setiap sudut kelas kami direka supaya anak-anak rasa selamat, disayangi dan seronok untuk belajar setiap hari.</p>
+      <ul>
+        <li><span class="tick">✓</span> Kelas kecil dengan pengawasan rapi guru terlatih</li>
+        <li><span class="tick">✓</span> Kurikulum seimbang: Iman, Akademik & Kreativiti</li>
+        <li><span class="tick">✓</span> Persekitaran ceria, selamat & mesra kanak-kanak</li>
+        <li><span class="tick">✓</span> Laporan perkembangan anak dikongsi bersama ibu bapa</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="wave" style="background:var(--white);">
+  <svg viewBox="0 0 1200 60" preserveAspectRatio="none"><path d="M0,30 C150,0 350,60 600,30 C850,0 1050,60 1200,30 L1200,60 L0,60 Z" fill="#1E7A3B"/></svg>
+</div>
+
+<section class="schedule" id="program">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow">Satu Hari di Little Caliphs</span>
+      <h2>Jadual harian yang tersusun</h2>
+      <p>Dari pagi hingga petang, setiap waktu diisi dengan aktiviti bermakna.</p>
+    </div>
+    <div class="timeline">
+      <div class="t-item" data-reveal>
+        <span class="t-dot"></span>
+        <div class="t-time">7:30 pagi</div>
+        <div class="t-title">Ketibaan & Sarapan</div>
+        <div class="t-desc">Anak-anak disambut dengan mesra sebelum sarapan ringan bersama.</div>
+      </div>
+      <div class="t-item" data-reveal>
+        <span class="t-dot"></span>
+        <div class="t-time">8:30 pagi</div>
+        <div class="t-title">Al-Quran & Doa Harian</div>
+        <div class="t-desc">Bacaan Iqra'/Al-Quran mengikut tahap, diikuti hafazan doa-doa pendek.</div>
+      </div>
+      <div class="t-item" data-reveal>
+        <span class="t-dot"></span>
+        <div class="t-time">9:30 pagi</div>
+        <div class="t-title">Kelas Inggeris & Akademik</div>
+        <div class="t-desc">Pengenalan huruf, nombor dan Bahasa Inggeris melalui aktiviti interaktif.</div>
+      </div>
+      <div class="t-item" data-reveal>
+        <span class="t-dot"></span>
+        <div class="t-time">12:00 tengah hari</div>
+        <div class="t-title">Makan Tengah Hari & Rehat</div>
+        <div class="t-desc">Waktu makan bersama diikuti tidur/rehat pendek.</div>
+      </div>
+      <div class="t-item" data-reveal>
+        <span class="t-dot"></span>
+        <div class="t-time">2:30 petang</div>
+        <div class="t-title">Aktiviti Kreatif</div>
+        <div class="t-desc">Lukisan, muzik dan permainan bersama rakan untuk perkembangan minda & sosial.</div>
+      </div>
+      <div class="t-item" data-reveal>
+        <span class="t-dot"></span>
+        <div class="t-time">6:00 petang</div>
+        <div class="t-title">Persediaan Pulang</div>
+        <div class="t-desc">Kemas kelas dan sesi ringkas bersama ibu bapa sebelum pulang.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="programs" id="aktiviti">
+  <div class="wrap">
+    <div class="section-head center" data-reveal>
+      <span class="eyebrow">Lebih Dari Kelas Biasa</span>
+      <h2>Program & Aktiviti Sepanjang Tahun</h2>
+      <p>Pelbagai program bermakna untuk membina kenangan dan pengalaman indah buat anak-anak.</p>
+    </div>
+    <div class="prog-grid">
+      <div class="prog-item" data-reveal><span class="prog-ic">🎓</span><span>Majlis Graduasi</span></div>
+      <div class="prog-item" data-reveal><span class="prog-ic">🕋</span><span>Little Hajj</span></div>
+      <div class="prog-item" data-reveal><span class="prog-ic">🌙</span><span>Sambutan Hari Raya</span></div>
+      <div class="prog-item" data-reveal><span class="prog-ic">🍽️</span><span>Hari Kantin</span></div>
+      <div class="prog-item" data-reveal><span class="prog-ic">🏅</span><span>Sports Day</span></div>
+      <div class="prog-item" data-reveal><span class="prog-ic">👨‍👩‍👧</span><span>Perjumpaan Ibu Bapa</span></div>
+      <div class="prog-item" data-reveal><span class="prog-ic">📖</span><span>Khatam Al-Quran</span></div>
+      <div class="prog-item" data-reveal><span class="prog-ic">🚌</span><span>Lawatan Sambil Belajar</span></div>
+      <div class="prog-item" data-reveal><span class="prog-ic">👩‍🏫</span><span>Hari Guru</span></div>
+      <div class="prog-item prog-more" data-reveal><span class="prog-ic">✨</span><span>Dan Banyak Lagi</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="wave" style="background:var(--green-deep);">
+  <svg viewBox="0 0 1200 60" preserveAspectRatio="none"><path d="M0,30 C150,60 350,0 600,30 C850,60 1050,0 1200,30 L1200,60 L0,60 Z" fill="#FFFBF1"/></svg>
+</div>
+
+<section class="gallery" id="galeri">
+  <div class="wrap">
+    <div class="section-head center" data-reveal>
+      <span class="eyebrow">Galeri</span>
+      <h2>Detik Kenangan di Little Caliphs</h2>
+      <p>Sebahagian saat manis pelajar kami — dari kelas harian hingga majlis graduasi.</p>
+    </div>
+    <div class="gal-grid">
+      <div class="gal-item" data-reveal>
+        <img src="assets/gallery-1.jpg" alt="Majlis Grand Ihtifal graduasi pelajar Little Caliphs">
+        <div class="cap">Grand Ihtifal — Majlis Graduasi</div>
+      </div>
+      <div class="gal-item" data-reveal>
+        <img src="assets/gallery-2.jpg" alt="Pelajar Little Caliphs">
+        <div class="cap">Simulasi Haji-Little Hajj</div>
+      </div>
+      <div class="gal-item" data-reveal>
+        <img src="assets/gallery-3.jpg" alt="Pelajar Little Caliphs beraya bersama rakan">
+        <div class="cap">Sambutan Hari Raya AidilFitri</div>
+      </div>
+      <div class="gal-item" data-reveal>
+        <img src="assets/gallery-4.jpg" alt="Pelajar Little Caliphs">
+        <div class="cap">Hari Kantin</div>
+      </div>
+      <div class="gal-item" data-reveal>
+        <img src="assets/gallery-5.jpg" alt="Pelajar Little Caliphs">
+        <div class="cap">Sports Day</div>
+      </div>
+      <div class="gal-item" data-reveal>
+        <img src="assets/gallery-6.jpg" alt="Pelajar Little Caliphs sambutan Hari Raya">
+        <div class="cap">Program Khatam Al-Quran</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="testi">
+  <div class="wrap">
+    <div class="section-head center" data-reveal>
+      <span class="eyebrow">Kepercayaan Ibu Bapa</span>
+      <h2>Apa kata mereka yang pernah ke sini</h2>
+    </div>
+    <div class="testi-summary" data-reveal>
+      <div class="testi-score">
+        <div class="big">5.0</div>
+        <div class="stars">★★★★★</div>
+        <small>purata daripada ulasan Google</small>
+      </div>
+      <p>Sertai keluarga ibu bapa yang telah mempercayakan zaman kanak-kanak anak mereka kepada kami.</p>
+    </div>
+    <div class="testi-grid">
+      <div class="review-card" data-reveal>
+        <div class="review-row">
+          <div class="avatar">AZ</div>
+          <div class="review-meta"><b>Adam Zainal</b><br>9 ulasan · 2 foto</div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-note">Memberikan penilaian 5 bintang, setahun yang lalu.</div>
+      </div>
+      <div class="review-card" data-reveal>
+        <div class="review-row">
+          <div class="avatar">NA</div>
+          <div class="review-meta"><b>Nurul Ain</b><br>5 ulasan · 1 foto</div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-note">Anak saya jadi lebih yakin bertutur Bahasa Inggeris dan rajin mengaji sejak masuk sini.</div>
+      </div>
+      <div class="review-card" data-reveal>
+        <div class="review-row">
+          <div class="avatar">MH</div>
+          <div class="review-meta"><b>Muhammad Hafiz</b><br>12 ulasan</div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-note">Guru-guru sangat mesra dan sabar. Anak saya seronok pergi tadika setiap hari.</div>
+      </div>
+      <div class="review-card" data-reveal>
+        <div class="review-row">
+          <div class="avatar">SA</div>
+          <div class="review-meta"><b>Siti Aisyah</b><br>3 ulasan · 4 foto</div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-note">Suka tengok aktiviti kreatif yang dikongsi setiap minggu, anak makin kreatif dan berkeyakinan.</div>
+      </div>
+      <div class="review-card" data-reveal>
+        <div class="review-row">
+          <div class="avatar">FR</div>
+          <div class="review-meta"><b>Farid Rahman</b><br>7 ulasan</div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-note">Persekitaran selamat dan bersih, sangat sesuai untuk anak kecil belajar dan bermain.</div>
+      </div>
+      <div class="review-card" data-reveal>
+        <div class="review-row">
+          <div class="avatar">RJ</div>
+          <div class="review-meta"><b>Rosnah Jamil</b><br>6 ulasan · 2 foto</div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-note">Cikgu-cikgu sabar dan sentiasa update perkembangan anak kepada kami. Sangat berpuas hati!</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="location" id="lokasi">
+  <div class="wrap loc-grid">
+    <div class="loc-card" data-reveal>
+      <span class="eyebrow">Hubungi & Lawati Kami</span>
+      <h2 style="margin:14px 0 20px;">Lokasi & Waktu Operasi</h2>
+      <div class="loc-row">
+        <div class="ic" style="background:var(--red);">📍</div>
+        <div><b>Alamat</b><span>1A, Jalan Sri Sulong Mewah, Taman Jalan Sri Sulong, 83500 Parit Sulong, Johor</span></div>
+      </div>
+      <div class="loc-row">
+        <div class="ic" style="background:var(--yellow);color:var(--ink);">📞</div>
+        <div><b>Telefon & Whatsapp</b><span>019-740 4220</span></div>
+      </div>
+      <div class="loc-row">
+        <div class="ic" style="background:var(--green);">🕐</div>
+        <div><b>Waktu Operasi</b><span>7:30 pagi – 6:00 petang (Isnin–Jumaat)</span></div>
+      </div>
+      <div class="loc-row" style="border-bottom:none;">
+        <div class="ic" style="background:var(--blue);">🌐</div>
+        <div style="width:100%;">
+          <b>Ikuti Kami</b>
+          <div class="social-links">
+            <a class="social-btn sb-fb" href="https://www.facebook.com/share/1MaJcFGPVd/?mibextid=wwXIfr" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95Z"/></svg>
+              <span>Facebook</span>
+            </a>
+            <a class="social-btn sb-ig" href="https://www.instagram.com/littlecaliphssrisulong?igsh=MWd3NW1saGdidTkwcg==" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c2.72 0 3.06.01 4.12.06 1.06.05 1.79.22 2.43.47.66.26 1.22.6 1.77 1.15.55.55.89 1.11 1.15 1.77.25.64.42 1.37.47 2.43C21.99 8.94 22 9.28 22 12s-.01 3.06-.06 4.12c-.05 1.06-.22 1.79-.47 2.43a4.9 4.9 0 0 1-1.15 1.77 4.9 4.9 0 0 1-1.77 1.15c-.64.25-1.37.42-2.43.47C15.06 21.99 14.72 22 12 22s-3.06-.01-4.12-.06c-1.06-.05-1.79-.22-2.43-.47a4.9 4.9 0 0 1-1.77-1.15 4.9 4.9 0 0 1-1.15-1.77c-.25-.64-.42-1.37-.47-2.43C2.01 15.06 2 14.72 2 12s.01-3.06.06-4.12c.05-1.06.22-1.79.47-2.43.26-.66.6-1.22 1.15-1.77A4.9 4.9 0 0 1 5.45 2.53c.64-.25 1.37-.42 2.43-.47C8.94 2.01 9.28 2 12 2Zm0 1.8c-2.67 0-2.99.01-4.04.06-.87.04-1.34.18-1.65.3-.42.16-.71.35-1.02.66-.31.31-.5.6-.66 1.02-.12.31-.26.78-.3 1.65C4.28 7.24 4.27 7.56 4.27 12s.01 4.76.06 5.51c.04.87.18 1.34.3 1.65.16.42.35.71.66 1.02.31.31.6.5 1.02.66.31.12.78.26 1.65.3.99.05 1.31.06 4.04.06s3.05-.01 4.04-.06c.87-.04 1.34-.18 1.65-.3.42-.16.71-.35 1.02-.66.31-.31.5-.6.66-1.02.12-.31.26-.78.3-1.65.05-.75.06-1.07.06-5.51s-.01-4.76-.06-5.51c-.04-.87-.18-1.34-.3-1.65a2.75 2.75 0 0 0-.66-1.02 2.75 2.75 0 0 0-1.02-.66c-.31-.12-.78-.26-1.65-.3C15.05 3.81 14.73 3.8 12 3.8Zm0 3.05a5.15 5.15 0 1 1 0 10.3 5.15 5.15 0 0 1 0-10.3Zm0 1.8a3.35 3.35 0 1 0 0 6.7 3.35 3.35 0 0 0 0-6.7Zm5.35-1.98a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4Z"/></svg>
+              <span>Instagram</span>
+            </a>
+            <a class="social-btn sb-tt" href="https://www.tiktok.com/@littlecaliphssrisulong?_r=1&_t=ZS-97fvPHYYFs8" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 2h-3v13.2a2.8 2.8 0 1 1-2.3-2.76v-3.1a5.9 5.9 0 1 0 5.3 5.87V8.6a7.3 7.3 0 0 0 4.3 1.4v-3a4.3 4.3 0 0 1-4.3-4.3V2Z"/></svg>
+              <span>TikTok</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="map-visual" data-reveal>
+      <div class="pin">
+        <span class="emoji">📍</span>
+        <p>WVM3+C3 Parit Sulong, Johor Darul Ta'zim</p>
+        <a href="https://www.google.com/maps/search/?api=1&query=1A%2C+Jalan+Sri+Sulong+Mewah%2C+Taman+Jalan+Sri+Sulong%2C+83500+Parit+Sulong%2C+Johor" target="_blank" rel="noopener">Buka dalam Google Maps</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="confetti">
+    <div class="dot" style="width:16px;height:16px;background:var(--yellow);top:20%;left:10%;"></div>
+    <div class="dot" style="width:12px;height:12px;background:var(--green);top:70%;left:15%;"></div>
+    <div class="dot" style="width:20px;height:20px;background:var(--yellow);top:30%;left:88%;"></div>
+    <div class="dot" style="width:10px;height:10px;background:var(--green);top:75%;left:90%;"></div>
+  </div>
+  <div class="wrap" data-reveal>
+    <h2>Sedia daftarkan anak anda?</h2>
+    <p>Hubungi kami hari ini untuk maklumat pendaftaran dan lawatan ke tadika.</p>
+    <a class="btn btn-primary" href="tel:0197404220">☎️ Hubungi 019-740 4220</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-row">
+    <div class="foot-brand">📚 Little Caliphs Sri Sulong</div>
+    <div>© 2026 Tadika Little Caliphs Sri Sulong · Parit Sulong, Johor</div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
